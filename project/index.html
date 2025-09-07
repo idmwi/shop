@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+    <h1>نوع ارسال سفارش را انتخاب کنید</h1>
+    <div>
+        <input type="radio" id="normal" value="0" name="export" onclick="updatetotal()">ارسال معمولی(رایگان)
+    </div>
+    <div>
+        <input type="radio" id="express" value="20000" name="export" onclick="updatetotal()">ارسال سریع(20000تومان)
+    </div>
+    <div>
+        <input type="radio" id="sption" value="60000" name="export" onclick="updatetotal()">ارسال ویژه(60000تومان)
+    </div>
+    <div id="total">هزینه ارسال0تومان</div>
+
+    <script>
+        let normal = document.getElementById("normal")
+        let express = document.getElementById("express")
+        let sption = document.getElementById("sption")
+        let totalBox = document.getElementById("total")
+        function updatetotal() {
+            let total = 0;
+            if (normal.checked) {
+                total += Number(normal.value);
+
+            }
+            if (express.checked) {
+                total += Number(express.value);
+
+            }
+            if (sption.checked) {
+                total += Number(sption.value);
+            }
+            totalBox.innerHTML = "total: $ " + total;
+        }
+
+
+    </script>
+</body>
+
+</html>
